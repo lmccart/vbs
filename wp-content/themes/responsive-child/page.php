@@ -32,14 +32,7 @@ get_header(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php responsive_entry_top(); ?>
 
-				<?php get_template_part( 'post-meta-page' ); ?>
-
 				<div class="post-entry">
-					<?php if( has_post_thumbnail() ) : ?>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-							<?php the_post_thumbnail(); ?>
-						</a>
-					<?php endif; ?>
 					<?php the_content( __( 'Read more &#8250;', 'responsive' ) ); ?>
 					<?php wp_link_pages( array( 'before' => '<div class="pagination">' . __( 'Pages:', 'responsive' ), 'after' => '</div>' ) ); ?>
 				</div>
@@ -67,4 +60,4 @@ get_header(); ?>
 
 <?php get_footer(); ?>
 
-<?php if (strpos(get_permalink(),'splash') == false) get_sidebar(); ?>
+<?php get_sidebar(); ?>

@@ -14,8 +14,8 @@
 -------------------------------------------------------------- */
 
 body {
-	 background: #ffffff;
-	 color: #000000;
+	background: #ffffff;
+	color: #000000;
 }
 
 #wrapper {
@@ -33,13 +33,26 @@ body {
 	color: #000000 !important;
 }
 
+#widgets_top {
+	position: absolute:
+	top: 0;
+	left: 0;
+}
+
 #widgets {
 	position: fixed;
 	bottom: 0;
 	right: 0;
+	width: auto;
 }
 
 .widget-wrapper {
 	margin: 0;
+	background: none;
+	border: none;
+}
+
+ul {
+	list-style-type: none;
 }
  

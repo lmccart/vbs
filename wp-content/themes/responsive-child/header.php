@@ -47,24 +47,27 @@ if( !defined( 'ABSPATH' ) ) {
 <body <?php body_class(); ?>>
 
 <?php responsive_container(); // before container hook ?>
+
+<?php if(strpos(get_permalink(),'splash') != false) : ?>
+	<div id="widgets_top" class="<?php echo implode( ' ', responsive_get_sidebar_classes() ); ?>">
+		<?php responsive_widgets(); // above widgets hook ?>
+	
+		<div class="widget-wrapper">
+			<ul><li><a href="#">< Back to MOCA</a></li></ul>
+		</div><!-- end of .widget-wrapper -->
+	
+		<?php responsive_widgets_end(); // after widgets hook ?>
+	</div><!-- end of #widgets -->
+
+<?php endif; ?>
+
+
 <div id="container" class="hfeed">
 
 <?php responsive_header(); // before header hook ?>
 	<div id="header">
 
 		<?php responsive_header_top(); // before header content hook ?>
-
-		<?php if( has_nav_menu( 'top-menu', 'responsive' ) ) { ?>
-			<?php wp_nav_menu( array(
-								   'container'      => '',
-								   'fallback_cb'    => false,
-								   'menu_class'     => 'top-menu',
-								   'theme_location' => 'top-menu'
-							   )
-			);
-			?>
-		<?php } ?>
-
 		<?php responsive_in_header(); // header hook ?>
 
 		<?php if(strpos(get_permalink(),'splash') == false) : ?>

@@ -28,6 +28,7 @@ if( 'full-width-page' == responsive_get_layout() ) {
 }
 ?>
 
+
 <?php responsive_widgets_before(); // above widgets container hook ?>
 
 	<div id="widgets" class="<?php echo implode( ' ', responsive_get_sidebar_classes() ); ?>">
@@ -35,15 +36,24 @@ if( 'full-width-page' == responsive_get_layout() ) {
 
 		<div class="widget-wrapper">
 
-			<ul>
-				<li><a href="#">Past</a></li>
-				<li><a href="#">Present</a></li>
-				<li><a href="#">Notes</a></li>
-				<li><a href="#">Info</a></li>
-			</ul>
-
+			<?php if (strpos(get_permalink(),'splash') == false): ?>
+				<ul>
+					<li><a href="#">Past</a></li>
+					<li><a href="#">Present</a></li>
+					<li><a href="#">Notes</a></li>
+					<li><a href="#">Info</a></li>
+				</ul>
+			
+			<?php else: ?>
+				
+				<ul>
+					<li><a href="../">Sara VanDerBeek ></a></li>
+				</ul>
+			
+			<?php endif; ?>
 		</div><!-- end of .widget-wrapper -->
 
 		<?php responsive_widgets_end(); // after widgets hook ?>
 	</div><!-- end of #widgets -->
 <?php responsive_widgets_after(); // after widgets container hook ?>
+
