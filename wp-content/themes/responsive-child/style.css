@@ -1,0 +1,14 @@
+/*
+ Theme Name:     Responsive Child
+ Theme URI:      http://example.com/responsive-child/
+ Description:    Responsive Child Theme
+ Author:         Lauren McCarthy
+ Author URI:     http://example.com
+ Template:       responsive
+ Version:        1.0.0
+*/
+
+@import url("../responsive/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
