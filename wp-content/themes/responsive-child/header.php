@@ -67,23 +67,13 @@ if( !defined( 'ABSPATH' ) ) {
 
 		<?php responsive_in_header(); // header hook ?>
 
-		<?php if( get_header_image() != '' ) : ?>
+		<?php if(strpos(get_permalink(),'splash') == false) : ?>
 
 			<div id="logo">
 				<a href="<?php echo home_url( '/' ); ?>"><?php echo bloginfo( 'name' ); ?></a>
 			</div><!-- end of #logo -->
 
 		<?php endif; // header image was removed ?>
-
-		<?php if( !get_header_image() ) : ?>
-
-			<div id="logo">
-				<span class="site-name"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-				<span class="site-description"><?php bloginfo( 'description' ); ?></span>
-			</div><!-- end of #logo -->
-
-		<?php endif; // header image was removed (again) ?>
-
 
 		
 		<?php responsive_header_bottom(); // after header content hook ?>

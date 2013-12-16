@@ -67,4 +67,4 @@ get_header(); ?>
 
 <?php get_footer(); ?>
 
-<?php if (!is_front_page()) get_sidebar(); ?>
+<?php if (strpos(get_permalink(),'splash') == false) get_sidebar(); ?>
