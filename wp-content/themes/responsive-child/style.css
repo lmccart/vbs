@@ -33,6 +33,12 @@ body {
 	color: #000000 !important;
 }
 
+#content {
+	margin: 20px auto;
+	display: block;
+}
+
+
 #widgets_top {
 	position: absolute:
 	top: 0;
