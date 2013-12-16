@@ -1,9 +1,9 @@
-/* 
+/*
 Theme Name: Responsive 
 Theme URI: http://cyberchimps.com/responsive-theme/
 Description: Responsive Theme is a flexible foundation with fluid grid system that adapts your website to mobile devices and the desktop or any other viewing environment. Theme features 9 Page Templates, 11 Widget Areas, 6 Template Layouts, 4 Menu Positions and more. Powerful but simple Theme Options for full CMS control with easy Logo Upload, Social Networking and Webmaster Tools etc. Responsive is WooCommerce Compatible, Multilingual Ready (WPML), RTL-Language Support, Retina-Ready, Search Engine Friendly, W3C Markup Validated and currently translated into 45 languages. Cross-Browser compatible. No paid memberships or clubs to get Responsive help. http://cyberchimps.com/forum/free/responsive/
 
-Version: 1.9.4.0
+Version: 1.9.4.1
 Author: CyberChimps.com
 Author URI: http://cyberchimps.com
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready, flexible-width, rtl-language-support
@@ -125,7 +125,8 @@ html {
 body {
 	-moz-font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
-	color: #000000;
+	background: #efefef;
+	color: #555555;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	font-smoothing: antialiased;
@@ -701,7 +702,11 @@ form div {
 }
 
 #wrapper {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
 	background-color: #ffffff;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
 	clear: both;
 	margin: 20px auto 20px auto;
 	padding: 0 20px 20px 20px;
@@ -736,14 +741,6 @@ form div {
 #logo {
 	float: left;
 	margin: 0;
-	padding: 25px 0;
-	width: 100%;
-	text-align: center;
-	font-size: 2.063em;
-}
-
-#logo a {
-	color: black !important;
 }
 
 .site-name {
@@ -960,7 +957,12 @@ form div {
 /* =Widgets
 -------------------------------------------------------------- */
 .widget-wrapper {
-	margin: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	background-color: #f9f9f9;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+	margin: 0 0 20px;
 	padding: 20px;
 }
 
@@ -973,7 +975,6 @@ form div {
 
 #widgets {
 	margin-top: 40px;
-	position: absolute;
 }
 
 #widgets a {
@@ -1171,6 +1172,13 @@ form div {
 /* =Header Menu (Primary)
 -------------------------------------------------------------- */
 .menu {
+	background-color: #585858;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#585858), to(#3d3d3d));
+	background-image: -webkit-linear-gradient(top, #585858, #3d3d3d);
+	background-image: -moz-linear-gradient(top, #585858, #3d3d3d);
+	background-image: -ms-linear-gradient(top, #585858, #3d3d3d);
+	background-image: -o-linear-gradient(top, #585858, #3d3d3d);
+	background-image: linear-gradient(top, #585858, #3d3d3d);
 	clear: both;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#585858, endColorstr=#3d3d3d);
 	margin: 0 auto;
@@ -1483,7 +1491,13 @@ ul.menu > li:hover {
 .sub-header-menu a:hover {
 	-moz-background-clip: padding-box;
 	-webkit-background-clip: padding-box;
+	background-color: #f9f9f9;
 	background-clip: padding-box;
+}
+
+.sub-header-menu .current_page_item a,
+.sub-header-menu .current-menu-item a {
+	background-color: #f9f9f9;
 }
 
 .sub-header-menu li li {
@@ -1629,6 +1643,147 @@ ul.menu > li:hover {
 	font-size: 12px;
 }
 
+/* =Comments
+-------------------------------------------------------------- */
+#commentform {
+	margin: 0;
+}
+
+.commentlist {
+	border-bottom: 1px solid #e5e5e5;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.commentlist ol {
+	list-style: decimal;
+}
+
+.commentlist li {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	background-color: #ffffff;
+	border-radius: 4px;
+	margin: 0;
+}
+
+.commentlist .bypostauthor {
+}
+
+.commentlist li cite {
+	color: #111111;
+	font-size: 1.1em;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.commentlist li.alt {
+	background: #f9f9f9;
+}
+
+.commentlist .children {
+	list-style: none;
+	margin-left: 10px;
+	padding: 10px;
+}
+
+.commentlist .avatar {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	float: left;
+	margin-right: 10px;
+	padding: 0;
+	vertical-align: middle;
+}
+
+.comment-author .fn {
+}
+
+.comment-author .says {
+	color: #999999;
+}
+
+.comment-body .comment-meta {
+	color: #999999;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+.comment-body .comment-meta a {
+	font-size: 11px;
+}
+
+.comment-body {
+	clear: both;
+	padding: 10px;
+}
+
+.comment-body p {
+	clear: both;
+}
+
+.comment-body .reply {
+}
+
+.pingback, .trackback {
+	list-style: none;
+	margin: 20px 0;
+}
+
+.pingback cite,
+.trackback cite {
+	font-style: normal;
+}
+
+#pings,
+#comments {
+	text-align: left;
+}
+
+#respond {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-color: #eaeaea;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaeaea));
+	background-image: -webkit-linear-gradient(top, #ffffff, #eaeaea);
+	background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
+	background-image: -ms-linear-gradient(top, #ffffff, #eaeaea);
+	background-image: -o-linear-gradient(top, #ffffff, #eaeaea);
+	background-image: linear-gradient(top, #ffffff, #eaeaea);
+	border: 1px solid #cccccc;
+	border-bottom-color: #aaaaaa;
+	border-radius: 4px;
+	clear: both;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#eaeaea);
+	margin-top: 15px;
+	padding: 10px 20px 50px;
+}
+
+#respond label {
+	display: inline;
+}
+
+.reply {
+	margin: 10px 0;
+}
+
+.comment-form-url input,
+.comment-form-email input,
+.comment-form-author input,
+.comment-form-comment textarea {
+	display: block;
+	width: 100%;
+}
+
+.nocomments {
+	color: #999999;
+	font-size: .9em;
+	text-align: center;
+}
 
 /* =WordPress Core
 -------------------------------------------------------------- */
