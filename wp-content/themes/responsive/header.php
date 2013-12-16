@@ -70,7 +70,17 @@ if( !defined( 'ABSPATH' ) ) {
 		<?php if( get_header_image() != '' ) : ?>
 
 			<div id="logo">
-				<a href="<?php echo home_url( '/' ); ?>"><?php echo bloginfo( 'name' ); ?></a>
+				<a href="<?php echo home_url( '/' ); ?>"><img src="<?php header_image(); ?>" width="<?php if( function_exists( 'get_custom_header' ) ) {
+						echo get_custom_header()->width;
+					}
+					else {
+						echo HEADER_IMAGE_WIDTH;
+					} ?>" height="<?php if( function_exists( 'get_custom_header' ) ) {
+						echo get_custom_header()->height;
+					}
+					else {
+						echo HEADER_IMAGE_HEIGHT;
+					} ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
 			</div><!-- end of #logo -->
 
 		<?php endif; // header image was removed ?>
@@ -84,8 +94,26 @@ if( !defined( 'ABSPATH' ) ) {
 
 		<?php endif; // header image was removed (again) ?>
 
+		<?php get_sidebar( 'top' ); ?>
+		<?php wp_nav_menu( array(
+							   'container'       => 'div',
+							   'container_class' => 'main-nav',
+							   'fallback_cb'     => 'responsive_fallback_menu',
+							   'theme_location'  => 'header-menu'
+						   )
+		);
+		?>
 
-		
+		<?php if( has_nav_menu( 'sub-header-menu', 'responsive' ) ) { ?>
+			<?php wp_nav_menu( array(
+								   'container'      => '',
+								   'menu_class'     => 'sub-header-menu',
+								   'theme_location' => 'sub-header-menu'
+							   )
+			);
+			?>
+		<?php } ?>
+
 		<?php responsive_header_bottom(); // after header content hook ?>
 
 	</div><!-- end of #header -->

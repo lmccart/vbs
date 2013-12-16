@@ -12,3 +12,34 @@
 
 /* =Theme customization starts here
 -------------------------------------------------------------- */
+
+body {
+	 background: #ffffff;
+	 color: #000000;
+}
+
+#wrapper {
+	border: none;
+}
+
+#logo {
+	padding: 25px 0;
+	width: 100%;
+	text-align: center;
+	font-size: 2.063em;
+}
+
+#logo a {
+	color: #000000 !important;
+}
+
+#widgets {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+.widget-wrapper {
+	margin: 0;
+}
+ 
