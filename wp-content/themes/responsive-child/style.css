@@ -41,22 +41,32 @@ body {
 
 
 #widgets_top {
-	position: absolute:
+	position: fixed !important;
 	top: 0;
 	left: 0;
+	z-index: 1;
 }
 
 #widgets {
 	position: fixed;
 	bottom: 0;
 	right: 0;
+	margin: 0;
+	padding: 0;
 	width: auto;
+	z-index: 1;
+}
+
+#widgets ul, #widgets_top ul {
+	padding: 0;
+	margin: 0;
 }
 
 .widget-wrapper {
 	margin: 0;
 	background: none;
 	border: none;
+	padding: 40px;
 }
 
 ul {
@@ -64,10 +74,10 @@ ul {
 }
 
 a {
-	color:rgba(0,0,0,0.2)
+	color:rgba(0,0,0,0.25)
 }
 
 a:hover {
-	color:rgba(0,0,0,0.5)
+	color:rgba(0,0,0,0.6)
 }
  
