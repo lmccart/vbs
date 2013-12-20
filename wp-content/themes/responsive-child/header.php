@@ -53,7 +53,7 @@ if( !defined( 'ABSPATH' ) ) {
 		<?php responsive_widgets(); // above widgets hook ?>
 	
 		<div class="widget-wrapper">
-			<ul><li><a href="#">< Back to MOCA</a></li></ul>
+			<ul><li><a href="http://www.mocacleveland.org/exhibitions/sara-vanderbeek">< MOCA Cleveland</a></li></ul>
 		</div><!-- end of .widget-wrapper -->
 	
 		<?php responsive_widgets_end(); // after widgets hook ?>
