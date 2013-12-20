@@ -36,7 +36,7 @@ if( 'full-width-page' == responsive_get_layout() ) {
 
 		<div class="widget-wrapper">
 
-			<?php if (strpos(get_permalink(),'splash') == false): ?>
+			<?php if (strpos(get_permalink(),'cleveland') == false): ?>
 				<ul>
 					<li><a href="#">Past</a></li>
 					<li><a href="#">Present</a></li>

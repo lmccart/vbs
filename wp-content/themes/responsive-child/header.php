@@ -32,11 +32,13 @@ if( !defined( 'ABSPATH' ) ) {
 	<!--[if gt IE 9]><!-->
 <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 	<head>
-
+		<script type="text/javascript" src="//use.typekit.net/cxu0mrc.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		
 		<meta charset="<?php bloginfo( 'charset' ); ?>"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title><?php wp_title( '&#124;', true, 'right' ); ?></title>
+		<title>Sara VanDerBeek></title>
 
 		<link rel="profile" href="http://gmpg.org/xfn/11"/>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
@@ -48,7 +50,7 @@ if( !defined( 'ABSPATH' ) ) {
 
 <?php responsive_container(); // before container hook ?>
 
-<?php if(strpos(get_permalink(),'splash') != false) : ?>
+<?php if(strpos(get_permalink(),'cleveland') != false) : ?>
 	<div id="widgets_top" class="<?php echo implode( ' ', responsive_get_sidebar_classes() ); ?>">
 		<?php responsive_widgets(); // above widgets hook ?>
 	
@@ -70,7 +72,7 @@ if( !defined( 'ABSPATH' ) ) {
 		<?php responsive_header_top(); // before header content hook ?>
 		<?php responsive_in_header(); // header hook ?>
 
-		<?php if(strpos(get_permalink(),'splash') == false) : ?>
+		<?php if(strpos(get_permalink(),'cleveland') == false) : ?>
 
 			<div id="logo">
 				<a href="<?php echo home_url( '/' ); ?>"><?php echo bloginfo( 'name' ); ?></a>

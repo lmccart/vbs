@@ -16,6 +16,7 @@
 body {
 	background: #ffffff;
 	color: #000000;
+	font-family: ltc-bodoni-175 !important;
 }
 
 #wrapper {
@@ -26,7 +27,7 @@ body {
 	padding: 25px 0;
 	width: 100%;
 	text-align: center;
-	font-size: 2.063em;
+	font-size: 2.563em;
 }
 
 #logo a {

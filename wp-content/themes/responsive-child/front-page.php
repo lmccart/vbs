@@ -1,44 +1,63 @@
 <?php
 
 // Exit if accessed directly
-if ( !defined( 'ABSPATH' ) ) {
+if( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
- * Site Front Page
+ * Index Template
  *
- * Note: You can overwrite front-page.php as well as any other Template in Child Theme.
- * Create the same file (name) include in /responsive-child-theme/ and you're all set to go!
- * @see            http://codex.wordpress.org/Child_Themes and
- *                 http://themeid.com/forum/topic/505/child-theme-example/
  *
- * @file           front-page.php
+ * @file           index.php
  * @package        Responsive
  * @author         Emil Uzelac
  * @copyright      2003 - 2013 ThemeID
  * @license        license.txt
  * @version        Release: 1.0
- * @filesource     wp-content/themes/responsive/front-page.php
- * @link           http://codex.wordpress.org/Template_Hierarchy
+ * @filesource     wp-content/themes/responsive/index.php
+ * @link           http://codex.wordpress.org/Theme_Development#Index_.28index.php.29
  * @since          available since Release 1.0
  */
 
-/**
- * Globalize Theme Options
- */
-$responsive_options = responsive_get_options();
-/**
- * If front page is set to display the
- * blog posts index, include home.php;
- * otherwise, display static front page
- * content
- */
-if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page'] != 1 ) {
-	get_template_part( 'home' );
-} elseif ( 'page' == get_option( 'show_on_front' ) && $responsive_options['front_page'] != 1 ) {
-	$template = get_post_meta( get_option( 'page_on_front' ), '_wp_page_template', true );
-	$template = ( $template == 'default' ) ? 'page.php' : $template;
-	locate_template( $template, true );
-}
-?>
+get_header(); ?>
+
+<div id="content" class="col-460">
+
+	<?php if( have_posts() ) : ?>
+
+		<?php while( have_posts() ) : the_post(); ?>
+
+			<?php responsive_entry_before(); ?>
+			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<?php responsive_entry_top(); ?>
+
+				<div class="post-entry">
+					<?php the_content( __( 'Read more &#8250;', 'responsive' ) ); ?>
+					<?php wp_link_pages( array( 'before' => '<div class="pagination">' . __( 'Pages:', 'responsive' ), 'after' => '</div>' ) ); ?>
+				</div>
+				<!-- end of .post-entry -->
+
+				<?php get_template_part( 'post-data' ); ?>
+
+				<?php responsive_entry_bottom(); ?>
+			</div><!-- end of #post-<?php the_ID(); ?> -->
+			<?php responsive_entry_after(); ?>
+
+		<?php
+		endwhile;
+
+		get_template_part( 'loop-nav' );
+
+	else :
+
+		get_template_part( 'loop-no-posts' );
+
+	endif;
+	?>
+
+</div><!-- end of #content -->
+
+<?php get_footer(); ?>
+
+<?php get_sidebar(); ?>
