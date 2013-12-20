@@ -36,21 +36,23 @@ if( 'full-width-page' == responsive_get_layout() ) {
 
 		<div class="widget-wrapper">
 
-			<?php if (strpos(get_permalink(),'cleveland') == false): ?>
+			<?php if ((strpos(get_permalink(),'cleveland') == false) && !is_front_page()){ ?>
 				<ul>
-					<li><a href="#">Past</a></li>
-					<li><a href="#">Present</a></li>
-					<li><a href="#">Notes</a></li>
-					<li><a href="#">Info</a></li>
+				
+				<?php 
+					$items = array("Recent", "Past", "Notes", "Info"); 
+					foreach ($items as $i) {
+						$class = ((strpos(get_permalink(),strtolower($i)) == true) ? 'style="text-decoration:underline;"' : '');
+						echo '<li><a '.$class.' href="#">'.$i.'</a></li>';
+					}
+					?>
 				</ul>
 			
-			<?php else: ?>
-				
+			<?php } else if (!is_front_page()) { ?>
 				<ul>
 					<li><a href="../">Sara VanDerBeek ></a></li>
 				</ul>
-			
-			<?php endif; ?>
+			<?php } ?>
 		</div><!-- end of .widget-wrapper -->
 
 		<?php responsive_widgets_end(); // after widgets hook ?>
