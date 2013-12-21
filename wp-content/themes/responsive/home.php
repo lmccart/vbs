@@ -4,7 +4,6 @@
 if( !defined( 'ABSPATH' ) ) {
 	exit;
 }
-
 /**
  * Blog Template
  *
