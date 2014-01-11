@@ -40,9 +40,6 @@ if( !defined( 'ABSPATH' ) ) {
 
 		<title>Sara VanDerBeek</title>
 
-		<link rel="profile" href="http://gmpg.org/xfn/11"/>
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
-
 		<?php wp_head(); ?>
 	</head>
 
@@ -72,13 +69,13 @@ if( !defined( 'ABSPATH' ) ) {
 		<?php responsive_header_top(); // before header content hook ?>
 		<?php responsive_in_header(); // header hook ?>
 
-		<?php if(strpos(get_permalink(),'cleveland') == false) : ?>
+ 		<?php if(strpos(get_permalink(),'cleveland') == false) : ?>
 
 			<div id="logo">
 				<a href="<?php echo home_url( '/' ); ?>"><?php echo bloginfo( 'name' ); ?></a>
 			</div><!-- end of #logo -->
 
-		<?php endif; // header image was removed ?>
+ 		<?php endif; // header image was removed ?> 
 
 		
 		<?php responsive_header_bottom(); // after header content hook ?>
