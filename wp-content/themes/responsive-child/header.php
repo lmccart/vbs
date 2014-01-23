@@ -47,18 +47,7 @@ if( !defined( 'ABSPATH' ) ) {
 
 <?php responsive_container(); // before container hook ?>
 
-<?php if(strpos(get_permalink(),'cleveland') != false) : ?>
-	<div id="widgets_top" class="<?php echo implode( ' ', responsive_get_sidebar_classes() ); ?>">
-		<?php responsive_widgets(); // above widgets hook ?>
-	
-		<div class="widget-wrapper">
-			<ul><li><a href="http://www.mocacleveland.org/exhibitions/sara-vanderbeek">< MOCA Cleveland</a></li></ul>
-		</div><!-- end of .widget-wrapper -->
-	
-		<?php responsive_widgets_end(); // after widgets hook ?>
-	</div><!-- end of #widgets -->
 
-<?php endif; ?>
 
 
 <div id="container" class="hfeed">

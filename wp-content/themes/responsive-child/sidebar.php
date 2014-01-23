@@ -48,11 +48,8 @@ if( 'full-width-page' == responsive_get_layout() ) {
 					?>
 				</ul>
 			
-			<?php } else if (!is_front_page()) { ?>
-				<ul>
-					<li><a href="../">Sara VanDerBeek ></a></li>
-				</ul>
 			<?php } ?>
+
 		</div><!-- end of .widget-wrapper -->
 
 		<?php responsive_widgets_end(); // after widgets hook ?>
