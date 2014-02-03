@@ -40,6 +40,17 @@ if( !defined( 'ABSPATH' ) ) {
 
 		<title>Sara VanDerBeek</title>
 
+
+		<script type="text/javascript">
+			// resizes video to avoid black bars
+			window.onload = function() {
+				var iframe = jQuery('iframe');
+				var width = iframe.width();
+				var ratio = 500/666; // based on vid dimensions
+				iframe.height(width/ratio);
+				//console.log(iframe.width(), iframe.height());
+			}
+		</script>
 		<?php wp_head(); ?>
 	</head>
 

@@ -20,11 +20,18 @@ body {
 }
 
 @media only screen and (max-device-width: 480px) {
- 	body {
+  body {
      font-size: 0.5em;
   }
   .col-460 {
-		width: 74.468085106383%;
+		width: 100%;
+  }
+  #container, #content, #wrapper, body {
+	  padding: 0 !important;
+	  margin: 0 !important;
+  }
+  .spacer {
+	  height: 0 !important;
   }
 }
 
@@ -97,5 +104,9 @@ a:hover {
 	color:rgba(0,0,0,0.6)
 }
 
+p {
+	margin: 0;
+	padding: 0;
+}
 
  
