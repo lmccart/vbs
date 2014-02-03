@@ -33,6 +33,9 @@ body {
   .spacer {
 	  height: 0 !important;
   }
+  iframe {
+	  opacity: 1.0;
+  }
 }
 
 
@@ -109,4 +112,7 @@ p {
 	padding: 0;
 }
 
+iframe {
+	opacity: 0;
+}
  

@@ -48,6 +48,7 @@ if( !defined( 'ABSPATH' ) ) {
 				var width = iframe.width();
 				var ratio = 500/666; // based on vid dimensions
 				iframe.height(width/ratio);
+				setTimeout(function(){iframe.fadeTo("slow", 1.0);}, 2500);
 				//console.log(iframe.width(), iframe.height());
 			}
 		</script>
